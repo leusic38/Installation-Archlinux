@@ -1,2 +1,2 @@
 # Installation-Archlinux
-Petit repo de rapel pour installer Archlinux
+Petit repo de rappel pour installer Archlinux
