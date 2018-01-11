@@ -143,7 +143,14 @@
         useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/bash 'login utilisateur'
         passwd 'login utilisateur'
         ```
-    11. autoriser sudo pour les utilisateurs(on ne travaille jamais en root).
-        
-        
+    11. autoriser sudo pour les utilisateurs(on ne travaille jamais en root):
+        ```
+        visudo
+        ```
 
+        décommenté la ligne "#%wheel ALL=(ALL) ALL" qui suit la ligne:
+        ```
+        ## Uncomment to allow members of group wheel to execute any command
+        %wheel ALL=(ALL) ALL
+        ```
+    12. 
