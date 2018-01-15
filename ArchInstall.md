@@ -153,4 +153,17 @@
         ## Uncomment to allow members of group wheel to execute any command
         %wheel ALL=(ALL) ALL
         ```
-    12. 
+## Mise en place des interfaces graphiques:
+En ce qui me concerne I3 et xfce4.
+
+On peut maintenant tout faire sans etre root.
+
+ 1. Pour commencer installation d'une interface de connexion graphique:
+    * installation de lightdm et lightdm-gtk-greeter
+    ```
+    sudo pacman -S lightdm lightdm-gtk-greeter
+    ```
+    * pour etre sur de bien avoir le clavier dans la bonne langue:
+    ```
+    sudo localectl set-x11-keymap fr
+    ```
