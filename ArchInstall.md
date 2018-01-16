@@ -119,7 +119,13 @@
        pacman -Syy networkmanager
        systemctl enable NetworkManager
        ```
-    8. Installation des différents paquets important:
+    8. Démontage des partitions et redémarage:
+       ```
+       exit
+       unmount -R /mnt
+       reboot
+       ```
+    9. Installation des différents paquets important:
        * ntp pour la synchronisation de l'horloge.
        * cronie pour les taches répétitives.
        * les paquets gst pour le multimedia.
@@ -133,17 +139,17 @@
          pacman -S cups gimp gimp-help-fr python-pyqt5 foomatic-{db,db-ppds,db-gutenprint-ppds,db-nonfree,db-nonfree-ppds} gutenprint
          pacman -S  ttf-{bitstream-vera,liberation,freefont,dejavu}
          ```
-    9. pour ma part j'utilise zsh comme shell avec oh-my-zsh et powerline theme au lieu de bash donc autant modifier de suite le shell. je le configurerai plus tard :
-       ```
-       pacman -S zsh
-       chsh -s /bin/zsh
-       ```
-    10. Ajout d'un utilisateur:
+    10. pour ma part j'utilise zsh comme shell avec oh-my-zsh et powerline theme au lieu de bash donc autant modifier de suite le shell. je le configurerai plus tard :
+        ```
+        pacman -S zsh
+        chsh -s /bin/zsh
+        ```
+    11. Ajout d'un utilisateur:
         ```
         useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/bash 'login utilisateur'
         passwd 'login utilisateur'
         ```
-    11. autoriser sudo pour les utilisateurs(on ne travaille jamais en root):
+    12. autoriser sudo pour les utilisateurs(on ne travaille jamais en root):
         ```
         visudo
         ```
@@ -163,7 +169,7 @@ On peut maintenant tout faire sans etre root.
     ```
     sudo pacman -S lightdm lightdm-gtk-greeter
     ```
-    * pour etre sur de bien avoir le clavier dans la bonne langue:
+    * pour etre sur de bien avoir le clavier dans la langue fr:
     ```
     sudo localectl set-x11-keymap fr
     ```
