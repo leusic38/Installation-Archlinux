@@ -130,13 +130,25 @@
        * cronie pour les taches répétitives.
        * les paquets gst pour le multimedia.
        * xorg pour l'affichage (penser au paquets des chipset graphique: )
-       * les pilotes pour l'impressions: vérifiersi il existe despaquets dédié a votre imprimante(ex: hplip pour les hp).
+          ```
+          pacman -S xf86-video-vesa
+          ```
+       * (si test sur virtualBox ajouter "virtualbox-guest-utils" :
+          ```
+          pacman -S virtualbox-guest-utils
+          ```
+          choisir la seconde option quia deja les paquets compilés. puis on l'active:
+          ```
+          systemctl enable vboxservice
+          ```
+         )
+       * les pilotes pour l'impressions: vérifier si il existe des paquets dédié a votre imprimante(ex: hplip pour les hp).
        * les fonts
          ```
          pacman -S ntp cronie
          pacman -S gst-plugins-{base,good,bad,ugly} gst-libav
          pacman -S xorg-{server,xinit,apps} xf86-input-{mouse,keyboard} xdg-user-dirs
-         pacman -S cups gimp gimp-help-fr python-pyqt5 foomatic-{db,db-ppds,db-gutenprint-ppds,db-nonfree,db-nonfree-ppds} gutenprint
+         pacman -S cups python-pyqt5 foomatic-{db,db-ppds,db-gutenprint-ppds,db-nonfree,db-nonfree-ppds} gutenprint
          pacman -S  ttf-{bitstream-vera,liberation,freefont,dejavu}
          ```
     10. pour ma part j'utilise zsh comme shell avec oh-my-zsh et powerline theme au lieu de bash donc autant modifier de suite le shell. je le configurerai plus tard :
@@ -146,7 +158,7 @@
         ```
     11. Ajout d'un utilisateur:
         ```
-        useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/bash 'login utilisateur'
+        useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/zsh 'login utilisateur'
         passwd 'login utilisateur'
         ```
     12. autoriser sudo pour les utilisateurs(on ne travaille jamais en root):
@@ -159,6 +171,9 @@
         ## Uncomment to allow members of group wheel to execute any command
         %wheel ALL=(ALL) ALL
         ```
+    13. installatin des differents packages:
+       ```
+       pacman -S ranger firefox firefox-i18n-fr libreoffice-still-fr vlc urxvt
 ## Mise en place des interfaces graphiques:
 En ce qui me concerne I3 et xfce4.
 
@@ -173,3 +188,4 @@ On peut maintenant tout faire sans etre root.
     ```
     sudo localectl set-x11-keymap fr
     ```
+ 2. Installation de i3
