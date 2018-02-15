@@ -41,6 +41,11 @@
    ```
 
 ## Passons à l'installation d'Archlinux:
+
+   0. Modifier la liste des mirroirs(on cherche les fr :
+      ```
+      nano /etc/pacman.d/mirrorlist
+      ```
   
    1. Installer les packages de base d'arch
       ```
@@ -147,7 +152,7 @@
          ```
          pacman -S ntp cronie
          pacman -S gst-plugins-{base,good,bad,ugly} gst-libav
-         pacman -S xorg-{server,xinit,apps} xf86-input-{mouse,keyboard} xdg-user-dirs
+         pacman -S xorg-{server,xinit,apps,xrand,} xf86-input-{mouse,keyboard} xdg-user-dirs
          pacman -S cups python-pyqt5 foomatic-{db,db-ppds,db-gutenprint-ppds,db-nonfree,db-nonfree-ppds} gutenprint
          pacman -S  ttf-{bitstream-vera,liberation,freefont,dejavu}
          ```
