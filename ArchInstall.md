@@ -166,12 +166,19 @@
         pacman -S zsh
         chsh -s /bin/zsh
         ```
-    11. Ajout d'un utilisateur:
+        
+    11. installation de trizen (pacaur n'étant plus maintenu:
+       ```
+       git clone https://aur.archlinux.org/trizen.git
+       cd trizen
+       makepkg -si
+       ```
+    12. Ajout d'un utilisateur:
         ```
         useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/zsh 'login utilisateur'
         passwd 'login utilisateur'
         ```
-    12. autoriser sudo pour les utilisateurs(on ne travaille jamais en root):
+    13. autoriser sudo pour les utilisateurs(on ne travaille jamais en root):
         ```
         visudo
         ```
@@ -181,7 +188,7 @@
         ## Uncomment to allow members of group wheel to execute any command
         %wheel ALL=(ALL) ALL
         ```
-    13. installatin des differents packages:
+    14. installatin des differents packages:
        ```
        pacman -S ranger firefox firefox-i18n-fr libreoffice-still-fr vlc rxvt-unicode urxvt-perls
        ```
@@ -194,7 +201,8 @@ On peut maintenant tout faire sans etre root.
     * installation de lightdm et lightdm-gtk-greeter
     ```
     sudo pacman -S lightdm lightdm-gtk-greeter
-    sudo systemctl enable lightdm.service
+    sudo systemctl start lightdm
+    sudo systemctl enable lightdm
     ```
     * pour etre sur de bien avoir le clavier dans la langue fr:
     ```
@@ -205,4 +213,5 @@ On peut maintenant tout faire sans etre root.
     trizen -S i3-gaps i3blocks i3status i3lock-color betterlockscreen
     trizen -S rofi polybar lxappearance lua conky
     trizen -S zsh-completions zsh-autosuggestions oh-my-zsh powerline ttf-font-awesome-4 exa dfc zsh-syntax-highlighting
+    trizen -S 
  
