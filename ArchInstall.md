@@ -42,9 +42,10 @@
 
 ## Passons à l'installation d'Archlinux:
 
-   0. Modifier la liste des mirroirs(on cherche les fr :
+   0. Modifier la liste des mirroirs(on cherche les français :
       ```
-      nano /etc/pacman.d/mirrorlist
+      pacman -S reflector
+      reflector --country 'france' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
       ```
   
    1. Installer les packages de base d'arch
