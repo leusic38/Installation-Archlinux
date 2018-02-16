@@ -135,9 +135,13 @@
        * ntp pour la synchronisation de l'horloge.
        * cronie pour les taches répétitives.
        * les paquets gst pour le multimedia.
-       * xorg pour l'affichage (penser au paquets des chipset graphique: )
+       * xorg pour l'affichage (penser au paquets des chipset graphique mettre celui qui convient: )
           ```
           pacman -S xf86-video-vesa
+          
+          pacman -S xf86-video-intel
+          pacman -S xf86-video-ati
+          pacman -S xf86-video-nouveau
           ```
        * (si test sur virtualBox ajouter "virtualbox-guest-utils" :
           ```
