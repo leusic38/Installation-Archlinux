@@ -183,7 +183,8 @@
         ```
     13. installatin des differents packages:
        ```
-       pacman -S ranger firefox firefox-i18n-fr libreoffice-still-fr vlc rxvt-unicode
+       pacman -S ranger firefox firefox-i18n-fr libreoffice-still-fr vlc rxvt-unicode urxvt-perls
+       ```
 ## Mise en place des interfaces graphiques:
 En ce qui me concerne I3 et xfce4.
 
@@ -193,6 +194,7 @@ On peut maintenant tout faire sans etre root.
     * installation de lightdm et lightdm-gtk-greeter
     ```
     sudo pacman -S lightdm lightdm-gtk-greeter
+    sudo systemctl enable lightdm.service
     ```
     * pour etre sur de bien avoir le clavier dans la langue fr:
     ```
@@ -201,5 +203,6 @@ On peut maintenant tout faire sans etre root.
  2. Installation de i3
     ```
     trizen -S i3-gaps i3blocks i3status i3lock-color betterlockscreen
-    trizen -S rofi polybar conky lxappearance oh-my-zsh
+    trizen -S rofi polybar lxappearance lua conky
+    trizen -S zsh-completions zsh-autosuggestions oh-my-zsh powerline ttf-font-awesome-4 exa dfc zsh-syntax-highlighting
  
