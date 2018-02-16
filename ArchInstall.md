@@ -157,7 +157,7 @@
          ```
          pacman -S ntp cronie
          pacman -S gst-plugins-{base,good,bad,ugly} gst-libav
-         pacman -S xorg-{server,xinit,apps,xrand,} xf86-input-{mouse,keyboard} xdg-user-dirs
+         pacman -S xorg-{server,xinit,apps,xrandr} imagemagick feh bc xterm xf86-input-{mouse,keyboard} xdg-user-dirs
          pacman -S cups python-pyqt5 foomatic-{db,db-ppds,db-gutenprint-ppds,db-nonfree,db-nonfree-ppds} gutenprint
          pacman -S  ttf-{bitstream-vera,liberation,freefont,dejavu}
          ```
@@ -183,7 +183,7 @@
         ```
     13. installatin des differents packages:
        ```
-       pacman -S ranger firefox firefox-i18n-fr libreoffice-still-fr vlc urxvt
+       pacman -S ranger firefox firefox-i18n-fr libreoffice-still-fr vlc rxvt-unicode
 ## Mise en place des interfaces graphiques:
 En ce qui me concerne I3 et xfce4.
 
@@ -199,3 +199,7 @@ On peut maintenant tout faire sans etre root.
     sudo localectl set-x11-keymap fr
     ```
  2. Installation de i3
+    ```
+    trizen -S i3-gaps i3blocks i3status i3lock-color betterlockscreen
+    trizen -S rofi polybar conky lxappearance oh-my-zsh
+ 
