@@ -168,11 +168,11 @@
         ```
         
     11. installation de trizen (pacaur n'étant plus maintenu:
-       ```
-       git clone https://aur.archlinux.org/trizen.git
-       cd trizen
-       makepkg -si
-       ```
+        ```
+        git clone https://aur.archlinux.org/trizen.git
+        cd trizen
+        makepkg -si
+        ```
     12. Ajout d'un utilisateur:
         ```
         useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/zsh 'login utilisateur'
