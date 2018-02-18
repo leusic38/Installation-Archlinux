@@ -49,6 +49,10 @@
 
    0. Modifier la liste des mirroirs(on cherche les français :
       ```
+      vi /etc/pacman.d/mirrorlist
+      ```
+      pour rechercher et remplacer Server par #Server
+      ```
       pacman -S reflector
       reflector --country 'france' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
       ```
@@ -172,17 +176,21 @@
         chsh -s /bin/zsh
         ```
         
-    11. installation de trizen (pacaur n'étant plus maintenu:
+    
+    11. Ajout d'un utilisateur:
+        ```
+        useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/zsh 'login utilisateur'
+        passwd 'login utilisateur'
+        ```
+        reconnection en utilisateur
+    
+    12. installation de trizen (pacaur n'étant plus maintenu:
         ```
         git clone https://aur.archlinux.org/trizen.git
         cd trizen
         makepkg -si
         ```
-    12. Ajout d'un utilisateur:
-        ```
-        useradd -m -g wheel -c 'Nom complet de l’utilisateur' -s /bin/zsh 'login utilisateur'
-        passwd 'login utilisateur'
-        ```
+    
     13. autoriser sudo pour les utilisateurs(on ne travaille jamais en root):
         ```
         visudo
