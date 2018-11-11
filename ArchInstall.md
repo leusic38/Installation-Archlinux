@@ -10,14 +10,13 @@
     lsblk
     ```
 
-    Pour ma part j'ai un SSD pour le system (sda) et un DD pour home et le swap.
+    Pour ma part j'ai deux SSD pour le system (sda) et mes dévelopements(sdb) et un DD pour le mon Stockage (sdc)
     Utilisation de gdisk
-    1. ssd (/dev/sda) 
-       1. boot (/dev/sda1) +1024M ef00
+    1. ssd (/dev/sda)256G 
+       1. boot (/dev/sda1) +512M ef00
        2. / linuxsystem (/dev/sda2) tout par default
-   2. dd (/dev/sdb)
-      1. swap (/dev/sdb1)+32G 2x la taille de la mémoire vive 8200
-      2. /home (/dev/sdb2) tout par default.
+       3. / home (/dev/sda3) tout par default
+   
 
     on applique ce qu'on vient de créer:
     ```
@@ -34,9 +33,9 @@
 3. on monte les partitions:
    ```
     mount /dev/sda2 /mnt
-    mkdir /mnt/{boot,home}
+    mkdir /mnt/{boot,development,personal}
     mount /dev/sda1 /mnt/boot
-    mount /dev/sdb2 /mnt/home
+    mount /dev/sdb1 /mnt/devlopment
    ```
 4. en cas de serveur proxi on ajoute ces commandes:
    ```
